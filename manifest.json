@@ -13,7 +13,8 @@
       "matches": [
         "https://rateyourmusic.com/charts/*",
         "https://rateyourmusic.com/release/album/*"
-      ]
+      ],
+      "run_at": "document_end"
     }
   ]
 }
