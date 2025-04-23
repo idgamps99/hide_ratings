@@ -1,0 +1,10 @@
+const allRatings = document.querySelectorAll(".page_charts_section_charts_item_details_average_num")
+const singleRating = document.querySelector(".avg_rating")
+
+if (allRatings) {
+  allRatings.forEach((rating) => rating.style.display = "none")
+} else if (singleRating) {
+  singleRating.style.display = "none"
+} else {
+  console.log("nothing selected here cowboy")
+}
