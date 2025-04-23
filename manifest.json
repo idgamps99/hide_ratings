@@ -4,12 +4,12 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "interface.html",
-    "default_icon": "note.png"
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/note.png"
   },
   "content_scripts": [
     {
-      "js": ["toggle_ratings.js"],
+      "js": ["scripts/toggle_ratings.js"],
       "matches": [
         "https://rateyourmusic.com/charts/*",
         "https://rateyourmusic.com/release/album/*"
