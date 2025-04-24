@@ -1,6 +1,7 @@
+const singleAlbumRating = document.querySelector(".avg_rating")
 const albumRatings = document.querySelectorAll(".page_charts_section_charts_item_details_average_num")
 const trackRatings = document.querySelectorAll(".pipe_separated")
-const singleRating = document.querySelector(".avg_rating")
+const recommendations = document.querySelectorAll(".component_discography_item_details_average")
 
 function show(rating) {
   rating.style.visibility = "visible"
@@ -15,18 +16,43 @@ function hide(rating) {
 }
 
 function hideRatings(ratings) {
+  console.log(ratings)
   ratings.forEach((rating) => hide(rating))
 }
 
-function toggleRatings() {
-  if (singleRating.style.visibility === "hidden") {
-    show(singleRating)
-    showRatings(albumRatings)
-    showRatings(trackRatings)
+function toggleRatings(hidden) {
+  if (hidden) {
+    if (singleAlbumRating) {
+      hide(singleAlbumRating)
+    }
+
+    if (albumRatings) {
+      hideRatings(albumRatings)
+    }
+
+    if (trackRatings) {
+      hideRatings(trackRatings)
+    }
+
+    if (recommendations) {
+      hideRatings(recommendations)
+    }
   } else {
-    hide(singleRating)
-    hideRatings(albumRatings)
-    hideRatings(trackRatings)
+    if (singleAlbumRating) {
+      show(singleAlbumRating)
+    }
+
+    if (albumRatings) {
+      showRatings(albumRatings)
+    }
+
+    if (trackRatings) {
+      showRatings(trackRatings)
+    }
+
+    if (recommendations) {
+      showRatings(recommendations)
+    }
   }
 }
 
@@ -36,3 +62,7 @@ function toggleRatings() {
 //     toggleRatings()
 //   }
 // })
+
+
+let hidden = true
+toggleRatings(hidden)
