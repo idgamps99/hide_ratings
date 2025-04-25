@@ -16,7 +16,6 @@ function hide(rating) {
 }
 
 function hideRatings(ratings) {
-  console.log(ratings)
   ratings.forEach((rating) => hide(rating))
 }
 
@@ -25,15 +24,12 @@ function toggleRatings(hidden) {
     if (singleAlbumRating) {
       hide(singleAlbumRating)
     }
-
     if (albumRatings) {
       hideRatings(albumRatings)
     }
-
     if (trackRatings) {
       hideRatings(trackRatings)
     }
-
     if (recommendations) {
       hideRatings(recommendations)
     }
@@ -41,31 +37,25 @@ function toggleRatings(hidden) {
     if (singleAlbumRating) {
       show(singleAlbumRating)
     }
-
     if (albumRatings) {
       showRatings(albumRatings)
     }
-
     if (trackRatings) {
       showRatings(trackRatings)
     }
-
     if (recommendations) {
       showRatings(recommendations)
     }
   }
 }
 
-// chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-//   if (message.action === "toggleRatings") {
-//     console.log("messages passed aight")
-//     toggleRatings()
-//   }
-// })
+chrome.storage.local.get({ "isHidden": false}, (result) => {
+  toggleRatings(result.isHidden)
+})
+
 
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
   if (msg.action === 'hide_ratings') {
-    alert("Message recieved!")
     toggleRatings(true)
   } else {
     toggleRatings(false)

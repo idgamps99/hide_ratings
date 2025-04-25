@@ -39,8 +39,10 @@ function determineMessage(hidden) {
   return "show_ratings"
 }
 
-document.addEventListener('DOMContentLoaded', initializeState)
+// initialize toggle state
+document.addEventListener("DOMContentLoaded", initializeState)
 
+// when toggled, tell the script to run
 slider.addEventListener("change", () => {
   chrome.storage.local.get({ "isHidden": false }, (result) => {
     const currentHidden = result.isHidden
@@ -63,14 +65,3 @@ slider.addEventListener("change", () => {
 })
 
 
-
-
-// 1. fetch 'isHidden' value
-//    if value exists
-//      assign it to let hidden
-//    else
-//      initialise it to let hidden
-// 2. listen to 'change event'
-//      call toggleHeader using hidden variable
-//      assign hidden to opposite of itself
-//      set new value of hidden in local storage
