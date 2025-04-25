@@ -63,6 +63,13 @@ function toggleRatings(hidden) {
 //   }
 // })
 
-
-let hidden = true
-toggleRatings(hidden)
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
+  if (msg.action === 'hide_ratings') {
+    alert("Message recieved!")
+    toggleRatings(true)
+  } else {
+    toggleRatings(false)
+  }
+  sendResponse({status: "processed"})
+  return true
+})
