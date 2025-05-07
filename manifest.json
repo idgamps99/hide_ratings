@@ -11,8 +11,7 @@
     {
       "js": ["scripts/toggle_ratings.js"],
       "matches": [
-        "https://rateyourmusic.com/charts/*",
-        "https://rateyourmusic.com/release/album/*"
+        "https://rateyourmusic.com/*"
       ],
       "run_at": "document_end"
     }

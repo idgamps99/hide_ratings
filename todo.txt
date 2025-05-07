@@ -1,0 +1,24 @@
+1 - HOMEPAGE: https://rateyourmusic.com/
+    - hide features albums rating
+    - hide new releases ratings
+2 - CHARTS: https://rateyourmusic.com/charts/*
+    - hide album ratings
+    - hide ratings when you switch pages on the chart
+3 - ARTIST PAGE: https://rateyourmusic.com/artist/*
+    - hide top track ratings
+    - hide album ratings
+    - hide album ratings when you click on all albums
+4 - ALBUM PAGE: https://rateyourmusic.com/release/album/*
+    - hide album rating
+    - hide track ratings
+    - hide recommended tracks
+
+
+content script is run on every single RYM page
+each time gets to a new page
+grab the URL
+match against one of the URLs
+define 4 functions, each dealing with a single page
+run the correct function
+listen to the DOMB being created - run processpage()
+
